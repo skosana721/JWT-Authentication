@@ -1,4 +1,5 @@
 import "./App.css";
+import RegisterForm from "./component/RegisterForm";
 
 function App() {
   return (
@@ -6,6 +7,7 @@ function App() {
       <header className="App-header">
         <h2>JWT Authentication</h2>
       </header>
+      <RegisterForm />
     </div>
   );
 }
