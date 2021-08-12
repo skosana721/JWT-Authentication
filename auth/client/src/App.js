@@ -1,4 +1,5 @@
 import "./App.css";
+import LoginForm from "./component/LoginForm";
 import RegisterForm from "./component/RegisterForm";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
         <h2>JWT Authentication</h2>
       </header>
       <RegisterForm />
+      <LoginForm />
     </div>
   );
 }
