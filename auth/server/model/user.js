@@ -14,6 +14,10 @@ const userSchema = new Schema({
   password: {
     type: Number,
   },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 let User = mongoose.model("User", userSchema);
