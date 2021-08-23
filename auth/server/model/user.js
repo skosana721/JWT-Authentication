@@ -10,9 +10,12 @@ const userSchema = new Schema({
     type: String,
     require: true,
     unique: true,
+    min: 6,
+    max: 255,
   },
   password: {
-    type: Number,
+    type: String,
+    min: 6,
   },
   date: {
     type: Date,
