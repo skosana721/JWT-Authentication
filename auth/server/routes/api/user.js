@@ -1,6 +1,7 @@
 const User = require("../../model/user");
 const { registerValidation, loginValidation } = require("../../validation");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const userRoutes = (app) => {
   app.get("/user", async (req, res) => {
@@ -51,6 +52,14 @@ const userRoutes = (app) => {
       user.password
     );
     if (!validPassword) return res.status(400).send("Invalid password");
+
+    // create and assign a token
+
+    const token = jwt.sign(
+      { _id: user._id, email: user.email, username: user.username },
+      process.env.TOKEN_SECRET
+    );
+    res.header("auth-token", token).send(token);
     res.send("Logged in!");
   });
 };
