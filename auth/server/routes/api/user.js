@@ -6,7 +6,7 @@ const auth = require("../auth");
 require("dotenv/config");
 
 const userRoutes = (app) => {
-  app.get("/user", auth, async (req, res) => {
+  app.get("/api/user", auth, async (req, res) => {
     try {
       const user = await User.findById({ _id: req.user._id }).select(
         "-password"
