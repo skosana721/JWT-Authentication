@@ -21,11 +21,9 @@ const useForm = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formInfo);
   };
   const handleLogIn = (e) => {
     e.preventDefault();
-    console.log(loginForm);
   };
   return {
     handleChange,
