@@ -9,10 +9,11 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import { useSelector } from "react-redux";
 import useForm from "./useForm";
 const RegisterForm = () => {
   const { handleChange, handleSubmit, formInfo } = useForm();
-
+  const error = useSelector((state) => state.error);
   return (
     <Container>
       <Row>
@@ -54,17 +55,7 @@ const RegisterForm = () => {
                   placeholder="Enter password"
                 />
               </FormGroup>
-              <FormGroup>
-                <Label for="confirmPassword">Confirm Password</Label>
-                <Input
-                  type="password"
-                  name="confirmPassword"
-                  onChange={handleChange}
-                  id="confirmPassword"
-                  value={formInfo.confirmPassword}
-                  placeholder="Confirm password"
-                />
-              </FormGroup>
+
               <Button color="primary">Sign up</Button>
             </Form>
           </div>
