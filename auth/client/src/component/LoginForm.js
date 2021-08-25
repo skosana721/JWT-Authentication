@@ -43,7 +43,7 @@ const LoginForm = () => {
                   placeholder="Enter password"
                 />
               </FormGroup>
-              <Button>Sign in</Button>
+              <Button type="submit">Sign in</Button>
             </Form>
           </div>
         </Col>
