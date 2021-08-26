@@ -39,7 +39,6 @@ export const logout = () => {
 
 export const login = (obj) => {
   return (dispatch) => {
-    console.log(obj);
     const config = {
       Headers: {
         "Content-type": "application/json",
