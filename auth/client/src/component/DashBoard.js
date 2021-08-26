@@ -1,11 +1,21 @@
 import React from "react";
+import { withRouter } from "react-router";
+import NavBar from "./NavBar";
+import { useSelector } from "react-redux";
 
 const DashBoard = () => {
+  const user = useSelector((state) => state.auth.user);
+
   return (
-    <div>
-      <h2>Welcome to the dashboard</h2>
+    <div className="dashboard">
+      <header>
+        <NavBar {...user} />
+      </header>
+      <h2>
+        Welcome welcome <span>{user.username && user.username}</span>
+      </h2>
     </div>
   );
 };
 
-export default DashBoard;
+export default withRouter(DashBoard);
