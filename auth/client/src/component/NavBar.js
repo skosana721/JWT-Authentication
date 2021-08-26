@@ -1,7 +1,17 @@
 import React from "react";
+import Logout from "./Logout";
 
-const NavBar = () => {
-  return <div></div>;
+const NavBar = ({ username }) => {
+  return (
+    <div>
+      <nav>
+        <ul>
+          <li>{username}</li>
+        </ul>
+        <Logout />
+      </nav>
+    </div>
+  );
 };
 
 export default NavBar;
