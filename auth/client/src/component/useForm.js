@@ -1,10 +1,19 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { registerUser, login } from "../redux/actions/auth";
 import { CLEAR_ERRORS } from "../redux/actionTypes/user";
+import { useHistory } from "react-router";
 
 const useForm = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
+  const { isAuthenticated } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      history.push("/Dashboard");
+    }
+  }, [isAuthenticated]);
   const [formInfo, setFormInfo] = useState({
     username: "",
     email: "",
